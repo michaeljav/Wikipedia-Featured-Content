@@ -112,26 +112,28 @@ const ContentPage: React.FC = () => {
   };
 
   return (
-    <div className='container mx-auto min-w-20'>
-      <h1 className='text-2xl font-bold mb-4'>Featured Content</h1>
+    // <div className='container mx-auto min-w-20'>
+    <div className=' mt-3  min-w-20 flex flex-col  justify-center'>
+      {/* <h1 className='text-2xl font-bold mb-4'>Featured Content</h1> */}
       {loading ? (
         <div className='text-center mt-8'>
-          <p className='text-gray-500'>Loading...</p>
+          <p className='text-gray-500 font-extrabold size-20'>Loading...</p>
         </div>
       ) : pagenati?.contentItem?.length > 0 ? (
-        <div>
-          <Pagination
-            showSizeChanger
-            onShowSizeChange={onShowSizeChange}
-            onChange={onChange}
-            pageSizeOptions={[5, 10, 20, 50, 100]}
-            defaultPageSize={5}
-            defaultCurrent={1}
-            total={pagenati.total}
-            // total={20}
-          />
-
-          <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4'>
+        <div className='flex flex-col items-center gap-4'>
+          <div>
+            <Pagination
+              showSizeChanger
+              onShowSizeChange={onShowSizeChange}
+              onChange={onChange}
+              pageSizeOptions={[5, 10, 20, 50, 100]}
+              defaultPageSize={5}
+              defaultCurrent={1}
+              total={pagenati.total}
+              // total={20}
+            />
+          </div>
+          <div className=' grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4'>
             {pagenati?.contentItem?.map((item, index) => (
               <div
                 key={index}

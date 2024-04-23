@@ -9,11 +9,6 @@ const router = createBrowserRouter([
     element: <App />,
     errorElement: <ErrorPage />,
   },
-  {
-    path: '/content',
-    element: <ContentPage />,
-    errorElement: <ErrorPage />,
-  },
 ]);
 
 export default router;

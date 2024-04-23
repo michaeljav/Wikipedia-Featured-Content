@@ -21,19 +21,24 @@ const Home: React.FC = () => {
   };
 
   return (
-    <div className='container mx-auto min-w-96'>
-      <h1 className='text-2xl font-bold mb-4'>Wikipedia Featured Content</h1>
-      <div className='flex items-center space-x-4 mb-4'>
+    // <div className='container mx-auto min-w-96 '>
+    <main className=' min-w-96 flex flex-col items-center justify-center m-5 font-semibold'>
+      {/* <div className='text-2xl font-bold mb-4'>Wikipedia Featured Content</div> */}
+      <h1 className='text-2xl font-extrabold shadow-xl mt-4'>
+        WIKIPEDIA FEATURED CONTENT
+      </h1>
+      {/* <div className='flex items-center space-x-4 mb-4'> */}
+      <div className=' mt-10 mb-4'>
         <input
           type='date'
           value={selectedDate}
           onChange={handleDateChange}
-          className='border border-gray-300 rounded px-2 py-1'
+          className='border border-gray-300 rounded px-2 py-1 w-40 mr-3'
         />
         <select
           value={selectedLanguage}
           onChange={handleLanguageChange}
-          className='border border-gray-300 rounded px-2 py-1'
+          className='border border-gray-300 rounded px-2 py-1 w-36'
         >
           <option value='en'>English</option>
           <option value='es'>Spanish</option>
@@ -52,7 +57,7 @@ const Home: React.FC = () => {
 
       {/* ScrollToTopButton component */}
       <ScrollToTopButton />
-    </div>
+    </main>
   );
 };
 

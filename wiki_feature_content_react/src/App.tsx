@@ -6,9 +6,9 @@ import Home from './pages/Home';
 
 function App() {
   return (
-    <>
+    <div className='w-screen h-screen bg-green-400'>
       <Home />
-    </>
+    </div>
   );
 }
 
