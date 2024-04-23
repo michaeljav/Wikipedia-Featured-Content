@@ -1,3 +1,14 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.truncate-text {
+  display: block;
+  display: -webkit-box;
+  overflow: hidden;
+  -webkit-box-orient: vertical;
+  text-overflow: ellipsis;
+  /* Establece el número máximo de líneas antes de truncar */
+  -webkit-line-clamp: 1; /* Cambia el número a la cantidad deseada de líneas */
+  max-height: 4.5em; /* Ajusta según el tamaño de línea y la cantidad de líneas */
+}

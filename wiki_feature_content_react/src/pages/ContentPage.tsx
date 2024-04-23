@@ -2,6 +2,8 @@ import React, { useContext, useEffect, useState } from 'react';
 import axios from 'axios';
 import { AppContext } from '../context/AppContentType';
 import { Pagination, PaginationProps } from 'antd';
+import { Link, NavLink } from 'react-router-dom';
+import { LinkVisited } from '../components/LinkVisited';
 // import 'antd/dist/antd.css';
 
 export interface ContentItem {
@@ -23,7 +25,7 @@ interface IPagination {
 
 const ContentPage: React.FC = () => {
   const [loading, setLoading] = useState<boolean>(false);
-
+  const [visited, setVisited] = useState<boolean>(false);
   const initialPage = { total: 0, contentItem: [] } as IPagination;
 
   const [pagenati, setPagenati] = useState<IPagination>(initialPage);
@@ -136,21 +138,45 @@ const ContentPage: React.FC = () => {
                 className='border border-gray-300 rounded p-4 cursor-pointer'
                 // onClick={() => window.open(item.title, '_blank')}
               >
-                <h2 className='text-lg font-bold mb-2 flex items-center'>
+                {/* <h2 className='text-lg font-bold mb-2 flex items-center'>
                   {item.text}
-                </h2>
+                </h2> */}
                 {item?.thumbnail?.source ? (
                   <img
                     src={item.thumbnail.source}
                     alt={item.title}
-                    className='mb-2'
+                    className='mb-2 w-full h-auto object-cover rounded-t-lg'
+                    // className=''
                   />
                 ) : (
-                  <div className='bg-gray-200 h-40 w-40 flex items-center justify-center text-gray-400 text-lg'>
+                  <div className='bg-gray-200 h-40  flex items-center justify-center text-gray-400 text-lg'>
                     No Image Available
                   </div>
                 )}
-                <p>{item.description}</p>
+                <h4 className='border-b-2 text-3xl truncate-text'>
+                  {item?.normalizedtitle}
+                </h4>
+                <p className='my-4'>{item.extract}</p>
+
+                {/* <Link
+                  target='_blank'
+                  rel='noopener noreferrer'
+                  to={`${item?.content_urls?.desktop?.page}`}
+                  className='my-4 px-4 py-2 text-white hover:bg-blue-700 bg-blue-500'
+                >
+                  Read more
+                </Link> */}
+
+                {/* <NavLink
+                  target='_blank'
+                  rel='noopener noreferrer'
+                  to={`${item?.content_urls?.desktop?.page}`}
+                  className='my-4 px-4 py-2 text-white hover:bg-blue-700 bg-blue-500'
+                >
+                  Read more
+                </NavLink> */}
+
+                <LinkVisited item={item?.content_urls?.desktop?.page} />
               </div>
             ))}
           </div>
