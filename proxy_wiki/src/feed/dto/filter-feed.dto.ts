@@ -1,4 +1,10 @@
-import { IsDateString, IsEnum, IsNotEmpty } from 'class-validator';
+import {
+  IsDateString,
+  IsEnum,
+  IsNotEmpty,
+  IsOptional,
+  IsString,
+} from 'class-validator';
 import { LENGUAGES } from '../enum/language';
 
 export class FilterFeedDto {
@@ -11,4 +17,8 @@ export class FilterFeedDto {
     message: 'Invalid date format. Please use YYYY-MM-DD.',
   })
   date: string;
+
+  @IsOptional()
+  @IsString()
+  textToTrans: string;
 }

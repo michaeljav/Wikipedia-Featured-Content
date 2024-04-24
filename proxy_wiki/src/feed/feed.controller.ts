@@ -17,28 +17,18 @@ import { FilterFeedDto } from './dto/filter-feed.dto';
 export class FeedController {
   constructor(private readonly feedService: FeedService) {}
 
-  @Post()
-  create(@Body() createFeedDto: CreateFeedDto) {
-    return this.feedService.create(createFeedDto);
-  }
-
   @Get()
-  findAll(@Query() search: FilterFeedDto) {
+  feed(@Query() search: FilterFeedDto) {
     return this.feedService.feed(search);
   }
 
-  @Get(':id')
-  findOne(@Param('id') id: string) {
-    return this.feedService.findOne(+id);
+  @Post('/translate/:lang')
+  translate(@Param('lang') lang: string, @Query() search: FilterFeedDto) {
+    return this.feedService.translate(lang, search);
   }
 
-  @Patch(':id')
-  update(@Param('id') id: string, @Body() updateFeedDto: UpdateFeedDto) {
-    return this.feedService.update(+id, updateFeedDto);
-  }
-
-  @Delete(':id')
-  remove(@Param('id') id: string) {
-    return this.feedService.remove(+id);
+  @Get('/translate')
+  getLanguages() {
+    return this.feedService.getLanguages();
   }
 }
