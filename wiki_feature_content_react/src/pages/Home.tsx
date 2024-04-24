@@ -22,7 +22,7 @@ const Home: React.FC = () => {
 
   return (
     // <div className='container mx-auto min-w-96 '>
-    <main className=' min-w-96 flex flex-col items-center justify-center  font-semibold'>
+    <main className='h-screen min-w-96 flex flex-col items-center   font-semibold'>
       {/* <div className='text-2xl font-bold mb-4'>Wikipedia Featured Content</div> */}
       <h1 className='text-2xl font-extrabold shadow-xl mt-10'>
         WIKIPEDIA FEATURED CONTENT
