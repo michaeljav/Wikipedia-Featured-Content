@@ -1,0 +1,91 @@
+{
+	"info": {
+		"_postman_id": "08c397f1-901d-482e-b912-cebc152cc59d",
+		"name": "Nest Wiki",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "1084571",
+		"_collection_link": "https://cloudy-sunset-108413.postman.co/workspace/MJM~442f6978-eeb5-410c-bade-2cd356d4b9c1/collection/1084571-08c397f1-901d-482e-b912-cebc152cc59d?action=share&source=collection_link&creator=1084571"
+	},
+	"item": [
+		{
+			"name": "feed",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/feed?lang=en&date=2023-04-23",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"feed"
+					],
+					"query": [
+						{
+							"key": "lang",
+							"value": "en"
+						},
+						{
+							"key": "date",
+							"value": "2023-04-23"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "feed get supported languages",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/feed/translate",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"feed",
+						"translate"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "feed  translate extract and title",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/feed/translate/es?lang=en&date=2023-04-23",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"feed",
+						"translate",
+						"es"
+					],
+					"query": [
+						{
+							"key": "lang",
+							"value": "en"
+						},
+						{
+							"key": "date",
+							"value": "2023-04-23"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
